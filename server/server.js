@@ -8,7 +8,7 @@ function start() {
     });
 
     app.listen(3000, () => {
-        console.log('server is running at port 3000 ...');
+        console.log('serveddr is running at port 3000 ...');
     });
 }
 
