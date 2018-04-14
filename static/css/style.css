@@ -59,3 +59,62 @@ table {
 p {
     word-wrap: break-word
 }
+
+html,
+body {
+    font-size: 0.2rem;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    padding-bottom: 1.2rem;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+    overflow: auto;
+}
+
+.message-box {
+    box-shadow: 0.1rem 0.1rem 0.3rem #ccc;
+}
+
+.message-item {
+    line-height: 0.3rem;
+    background: #ddd;
+    padding: 0.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.send-box {
+    display: flex;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    position: fixed;
+    left: 0;
+    bottom: 0.2rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.message-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    outline-style: none;
+    padding-left: 0.1rem;
+    border-radius: 0;
+    border-right: 0;
+}
+
+.send-button {
+    text-align: center;
+    width: 1rem;
+    background: orange;
+    font-size: 0.3rem;
+    user-select: none;
+    border-radius: 0.02rem;
+}

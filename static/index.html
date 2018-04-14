@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>chat room</title>
     <link rel="stylesheet" href="./css/style.css">
@@ -11,17 +11,33 @@
 
 <body>
     <div id="app">
-        <div v-for="message in messages">
-            {{ message.message }}
-        </div>
-        <div>
-            <input type="text" v-model="myMessage">
-            <div @click="doSend">发送</div>
+        <ul class="message-box">
+            <li v-for="message in messages" class="message-item">
+                {{ message.message }}
+            </li>
+        </ul>
+        <div class="send-box">
+            <input type="text" v-model="myMessage" class="message-input">
+            <div @click="doSend" class="send-button">发送</div>
         </div>
     </div>
 </body>
 
 </html>
+<script>
+    (function () {
+        changeRem();
+        function changeRem() {
+            document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth / 720 * 100 + 'px';
+        }
+        window.addEventListener('pageshow', function () {
+            changeRem();
+        });
+        window.addEventListener('resize', function () {
+            changeRem();
+        });
+    })();
+</script>
 <script src="./lib/vue.js"></script>
 <script src="./lib/socket.io.js"></script>
 <script src="./js/app.js"></script>
