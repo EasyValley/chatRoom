@@ -1,35 +1,21 @@
 {
-  "name": "koa-react",
+  "name": "chatroom",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "dependencies": {
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-static": "^4.0.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "socket.io": "^4.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1",
-    "webpack": "^4.0.1"
+    "nodemon": "^1.17.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./server/index.js"
+    "start": "nodemon ./src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EasyValley/koa-react.git"
-  },
-  "keywords": [
-    "koa",
-    "react"
-  ],
   "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EasyValley/koa-react/issues"
-  },
-  "homepage": "https://github.com/EasyValley/koa-react#readme"
+  "license": "MIT"
 }
