@@ -25,6 +25,7 @@ var app = new Vue({
         });
         socket.on('users', function (data) {
             console.log(data);
+
         })
 
     },
@@ -39,6 +40,15 @@ var app = new Vue({
         },
         doSendUsername: function () {
             socket.emit('username', this.username)
+
+
+            var div = document.createElement('div');
+            div.className = "username-alert";
+            div.innerHTML = '用户名设置成功！';
+            document.body.appendChild(div);
+            setTimeout(function () {
+                document.body.removeChild(div);
+            }, 500);
         }
     }
 

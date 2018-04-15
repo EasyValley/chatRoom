@@ -17,10 +17,16 @@ function start() {
 
 
         socket.on('chat message', (data) => {
+            let username = '';
+            if (socket.username && socket.username.trim() !== '') {
+                username = socket.username.trim()
+            } else {
+                username = '匿名';
+            }
 
             io.emit('chat message', {
                 message: data,
-                username:socket.username?socket.username:'匿名'
+                username
             });
 
         });
@@ -28,8 +34,15 @@ function start() {
         socket.on('username', (data) => {
             socket.username = data;
             let arr = clients.map((item) => {
+                let username = '';
+                if (socket.username && socket.username.trim() !== '') {
+                    username = socket.username.trim()
+                } else {
+                    username = '匿名';
+                }
+
                 return {
-                    username: item['username'] ? item['username'] : '匿名'
+                    username
                 };
             })
 

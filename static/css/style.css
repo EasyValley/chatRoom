@@ -126,3 +126,16 @@ body {
     user-select: none;
     border-radius: 0.02rem;
 }
+
+.username-alert {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 0.3rem;
+    padding: 0.2rem;
+    text-align: center;
+    width: 3rem;
+    margin-left: -1.5rem;
+    border-radius: 0.1rem;
+}
