@@ -10,12 +10,17 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <ul class="message-box">
             <li v-for="message in messages" class="message-item">
-                {{ message.message }}
+                <span> {{ message.username }}:</span>
+                <span> {{ message.message }}</span>
             </li>
         </ul>
+        <div class="send-box send-box-user">
+            <input type="text" v-model="username" class="message-input">
+            <div @click="doSendUsername" class="send-button">用户名</div>
+        </div>
         <div class="send-box">
             <input type="text" v-model="myMessage" class="message-input">
             <div @click="doSend" class="send-button">发送</div>

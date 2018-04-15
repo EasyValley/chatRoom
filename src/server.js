@@ -19,8 +19,21 @@ function start() {
         socket.on('chat message', (data) => {
 
             io.emit('chat message', {
-                message: data
+                message: data,
+                username:socket.username?socket.username:'匿名'
             });
+
+        });
+
+        socket.on('username', (data) => {
+            socket.username = data;
+            let arr = clients.map((item) => {
+                return {
+                    username: item['username'] ? item['username'] : '匿名'
+                };
+            })
+
+            io.emit('users', arr);
 
         });
 

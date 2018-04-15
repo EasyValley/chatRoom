@@ -77,6 +77,10 @@ body {
     overflow: auto;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 .message-box {
     box-shadow: 0.1rem 0.1rem 0.3rem #ccc;
 }
@@ -99,6 +103,10 @@ body {
     width: 100%;
     padding: 0 0.5rem;
     box-sizing: border-box;
+}
+
+.send-box-user {
+    bottom: 1.2rem;
 }
 
 .message-input {

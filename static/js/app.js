@@ -14,7 +14,8 @@ var app = new Vue({
     data: function () {
         return {
             messages: [],
-            myMessage:''
+            myMessage: '',
+            username: ''
         };
     },
     mounted: function () {
@@ -22,6 +23,10 @@ var app = new Vue({
         socket.on('chat message', function (data) {
             that.getMessages(data);
         });
+        socket.on('users', function (data) {
+            console.log(data);
+        })
+
     },
     methods: {
 
@@ -31,6 +36,9 @@ var app = new Vue({
         },
         getMessages: function (data) {
             this.messages.push(data);
+        },
+        doSendUsername: function () {
+            socket.emit('username', this.username)
         }
     }
 
